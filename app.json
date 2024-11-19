@@ -1,0 +1,38 @@
+{   "name": "LocalCulinary",
+    "slug": "LocalCulinary",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo-kl.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo-kl.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo-kl.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo-kl.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#E2FFF0"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
