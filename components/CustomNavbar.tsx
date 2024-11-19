@@ -1,17 +1,17 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
-import { Home, Filter, Info } from "lucide-react-native";
+import { Home, Info } from "lucide-react-native";
 
 export default function CustomNavbar() {
   const router = useRouter();
 
   return (
     <View style={styles.navbar}>
-      <TouchableOpacity onPress={() => router.push("/")}>
+      <TouchableOpacity onPress={() => router.push('/')}>
         <Home color="black" size={24} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity onPress={() => router.push('/info')}>
         <Info color="black" size={24} />
       </TouchableOpacity>
     </View>

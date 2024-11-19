@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { foodData } from "../../data/food";
+import { foodData } from "../../data/categoryFood";
 
 export default function FoodDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();

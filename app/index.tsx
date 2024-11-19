@@ -18,7 +18,7 @@ export default function HomeScreen() {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.categoryScrollContainer}
     >
-      {['All', 'Pedas', 'Gurih', 'Manis', 'Asin', 'mantap', 'anjai'].map((category, index) => (
+      {['All', 'Pedas', 'Gurih', 'Manis', 'Asin', 'Unik'].map((category, index) => (
         <TouchableOpacity
           key={index}
           style={[
@@ -61,7 +61,7 @@ export default function HomeScreen() {
       {renderCategory()}
 
       <Text style={styles.subHeaderText}>
-        {selectedCategory === 'All' ? 'Semua Makanan' : `Kategori: ${selectedCategory}`}
+        {selectedCategory === 'All' ? 'Semua Kuliner' : `Kuliner ${selectedCategory}`}
       </Text>
       <FlatList
         data={filteredData}
@@ -94,6 +94,8 @@ const styles = StyleSheet.create({
   },
   categoryScrollContainer: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
     paddingVertical: 10,
     paddingHorizontal: 5,
   },
@@ -102,11 +104,14 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    marginHorizontal: 5,
+    margin: 5,
+    marginBottom: 85,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 3,
-    height: 40,
+    minHeight: 50,
+    maxWidth: 120,
+    alignSelf: 'flex-start',
   },
   categoryCardSelected: {
     backgroundColor: '#006d3c',
@@ -115,6 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     color: '#006d3c',
+    textAlign: 'center',
   },
   categoryTextSelected: {
     color: '#FFFFFF',
