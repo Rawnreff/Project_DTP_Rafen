@@ -60,58 +60,62 @@ export default function HomeScreen() {
       <Text style={styles.subHeaderText}>Kategori</Text>
       {renderCategory()}
 
-      <Text style={styles.subHeaderText}>
-        {selectedCategory === 'All' ? 'Semua Kuliner' : `Kuliner ${selectedCategory}`}
-      </Text>
-      <FlatList
-        data={filteredData}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={renderItem}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.listContainer}
-      />
+      <ContentWrapper>
+        <Text style={styles.subHeaderText}>
+          {selectedCategory === 'All' ? 'Semua Kuliner' : `Kuliner ${selectedCategory}`}
+        </Text>
+        <FlatList
+          data={filteredData}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.listContainer}
+        />
+      </ContentWrapper>
     </View>
   );
 }
+
+const ContentWrapper = ({ children }) => {
+  return <View style={styles.contentWrapper}>{children}</View>;
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#EAF9F0',
     paddingHorizontal: 20,
-    paddingTop: 50,
+    paddingBottom: 80,
   },
   headerText: {
     fontSize: 32,
     fontWeight: 'bold',
     color: '#006d3c',
+    marginTop: 10,
   },
   subHeaderText: {
     fontSize: 20,
     fontWeight: '600',
     color: '#006d3c',
-    marginVertical: 15,
+    marginVertical: 10,
   },
   categoryScrollContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
     paddingVertical: 10,
     paddingHorizontal: 5,
   },
   categoryCard: {
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
-    paddingVertical: 10,
+    paddingVertical: 12,
     paddingHorizontal: 15,
-    margin: 5,
-    marginBottom: 85,
+    marginHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 3,
-    minHeight: 50,
-    maxWidth: 120,
-    alignSelf: 'flex-start',
+    minWidth: 90,
+    maxWidth: 90,
+    height: 50,
   },
   categoryCardSelected: {
     backgroundColor: '#006d3c',
@@ -124,6 +128,13 @@ const styles = StyleSheet.create({
   },
   categoryTextSelected: {
     color: '#FFFFFF',
+  },
+  contentWrapper: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 15,
+    elevation: 2,
+    height: '74%',
   },
   listContainer: {
     paddingBottom: 20,

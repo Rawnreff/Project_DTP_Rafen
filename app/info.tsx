@@ -22,7 +22,7 @@ export default function InfoScreen() {
           <Text style={styles.featureItem}>🍕 Jelajahi berbagai kategori hidangan lokal.</Text>
           <Text style={styles.featureItem}>⭐ Terdapat rating makanan.</Text>
           <Text style={styles.featureItem}>🔍 Filter hidangan sesuai dengan kebutuhan Anda.</Text>
-          <Text style={styles.featureItem}>📖 Informasi lengkap tentang bahan dan informasi menarik tentang kuliner.</Text>
+          <Text style={styles.featureItem}>📖 Informasi mengenai bahan dan deskripsi kuliner.</Text>
         </View>
         <Text style={styles.footer}>
           Terima kasih telah menggunakan aplikasi Kuliner Lokal. Bersama-sama, mari kita lestarikan dan nikmati kekayaan rasa kuliner Nusantara!
@@ -94,5 +94,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontStyle: "italic",
     marginTop: 20,
+    marginBottom: 80,
   },
 });
