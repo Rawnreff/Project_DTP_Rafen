@@ -21,9 +21,6 @@ const SplashScreen = () => {
         useNativeDriver: true,
       }).start();
 
-      setTimeout(() => {
-        navigation.navigate('/' as never);
-      }, 1500);
     }, 1500);
   }, [fadeAnim, navigation]);
 

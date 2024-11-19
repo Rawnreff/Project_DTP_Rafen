@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
-import { foodData, FoodType } from "../../data/food";
+import { foodData, FoodType } from "../../data/categoryFood";
 
 export default function FoodListScreen() {
   const router = useRouter();

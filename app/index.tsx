@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { foodData } from '../data/kategoriFood';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { useRouter } from 'expo-router';
+import { foodData } from '../data/categoryFood';
 
 export default function HomeScreen() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const router = useRouter();
 
-  // Filter data makanan berdasarkan kategori yang dipilih
   const filteredData =
     selectedCategory === 'All'
       ? foodData
       : foodData.filter((item) => item.category === selectedCategory);
 
   const renderCategory = () => (
-    <View style={styles.categoryContainer}>
-      {['All', 'Padang', 'Italiano', 'Seafood'].map((category, index) => (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={styles.categoryScrollContainer}
+    >
+      {['All', 'Pedas', 'Gurih', 'Manis', 'Asin', 'mantap', 'anjai'].map((category, index) => (
         <TouchableOpacity
           key={index}
           style={[
@@ -32,11 +37,14 @@ export default function HomeScreen() {
           </Text>
         </TouchableOpacity>
       ))}
-    </View>
+    </ScrollView>
   );
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => router.push(`../detail/${item.id}`)}
+    >
       <Image source={item.image} style={styles.cardImage} />
       <View style={styles.cardContent}>
         <Text style={styles.cardTitle}>{item.name}</Text>
@@ -84,20 +92,21 @@ const styles = StyleSheet.create({
     color: '#006d3c',
     marginVertical: 15,
   },
-  categoryContainer: {
+  categoryScrollContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
   },
   categoryCard: {
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    width: '22%',
+    marginHorizontal: 5,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 3,
+    height: 40,
   },
   categoryCardSelected: {
     backgroundColor: '#006d3c',
