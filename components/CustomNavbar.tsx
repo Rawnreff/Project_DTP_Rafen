@@ -9,10 +9,10 @@ export default function CustomNavbar() {
   return (
     <View style={styles.navbar}>
       <TouchableOpacity onPress={() => router.push('/')}>
-        <Home color="black" size={24} />
+        <Home color="black" size={30} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.push('/info')}>
-        <Info color="black" size={24} />
+        <Info color="black" size={30} />
       </TouchableOpacity>
     </View>
   );

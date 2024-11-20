@@ -7,11 +7,17 @@ export default function InfoScreen() {
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.title}>Tentang Kuliner Lokal</Text>
-        <Image 
-          source={require('../assets/images/logo-kl.png')} 
-          style={styles.image}
-        />
+        <View style={styles.header}>
+          <Image 
+            source={require('../assets/images/logo-kl.png')} 
+            style={styles.image}
+          />
+          <View style={styles.textContainer}>
+            <Text style={styles.smallTitle}>Tentang</Text>
+            <Text style={styles.title}>Kuliner Lokal</Text>
+          </View>
+       </View>
+
         <Text style={styles.description}>
           Kuliner Lokal adalah aplikasi mobile yang dirancang untuk memperkenalkan dan menjelajahi berbagai 
           makanan, minuman, dan budaya kuliner lokal yang kaya dan beragam. Kami percaya bahwa kuliner adalah bagian penting 
@@ -35,24 +41,36 @@ export default function InfoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E8F5E9",
+    backgroundColor: "#EAF9F0",
   },
   scrollContent: {
     paddingVertical: 30,
     paddingHorizontal: 20,
-    alignItems: "center",
   },
-  title: {
-    fontSize: 28,
-    color: "#387A61",
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: 20,
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 0,
+    width: "100%",
+    marginLeft: -10,
   },
   image: {
-    width: 150,
-    height: 150,
-    marginBottom: 20,
+    width: 80,
+    height: 80,
+    marginRight: -10,
+  },
+  textContainer: {
+    flexDirection: "column",
+  },
+  smallTitle: {
+    fontSize: 16,
+    color: "#387A61",
+    fontWeight: "500",
+  },
+  title: {
+    fontSize: 20,
+    color: "#387A61",
+    fontWeight: "bold",
   },
   description: {
     fontSize: 16,

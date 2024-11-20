@@ -56,7 +56,17 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>Kuliner Lokal</Text>
+      <View style={styles.header}>
+        <Image
+          source={require('../assets/images/logo-kl.png')}
+          style={styles.image}
+        />
+        <View style={styles.textContainer}>
+          <Text style={styles.smallTitle}>Kuliner</Text>
+          <Text style={styles.title}>Lokal</Text>
+        </View>
+      </View>
+
       <Text style={styles.subHeaderText}>Kategori</Text>
       {renderCategory()}
 
@@ -86,23 +96,44 @@ const styles = StyleSheet.create({
     backgroundColor: '#EAF9F0',
     paddingHorizontal: 20,
     paddingBottom: 80,
+    paddingTop: 15,
   },
-  headerText: {
-    fontSize: 32,
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 0,
+    width: '100%',
+  },
+  image: {
+    width: 80,
+    height: 80,
+    marginRight: -10,
+    marginLeft: -25,
+  },
+  textContainer: {
+    flexDirection: 'column',
+  },
+  smallTitle: {
+    fontSize: 12,
+    color: '#387A61',
+    fontWeight: '500',
+  },
+  title: {
+    fontSize: 26,
+    color: '#387A61',
     fontWeight: 'bold',
-    color: '#006d3c',
-    marginTop: 10,
+    marginBottom: -2,
   },
   subHeaderText: {
     fontSize: 20,
     fontWeight: '600',
     color: '#006d3c',
-    marginVertical: 10,
+    marginBottom: 10,
   },
   categoryScrollContainer: {
     flexDirection: 'row',
-    paddingVertical: 10,
-    paddingHorizontal: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 0,
   },
   categoryCard: {
     backgroundColor: '#FFFFFF',
@@ -135,7 +166,6 @@ const styles = StyleSheet.create({
     padding: 0,
     elevation: 2,
     height: '78%',
-
   },
   listContainer: {
     paddingBottom: 20,
