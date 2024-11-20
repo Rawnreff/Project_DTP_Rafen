@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#EAF9F0',
   },
   logo: {
-    width: 300,
-    height: 300,
-    marginBottom: -50,
+    width: 250,
+    height: 250,
+    marginBottom: -40,
   },
   text: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#387A61',
   },
