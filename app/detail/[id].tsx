@@ -14,7 +14,7 @@ export default function FoodDetailScreen() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Food Tidak Ditemukan</Text>
-        <Text style={styles.description}>ID yang dicari: {foodId}</Text>
+        <Text style={styles.infoDescription}>ID yang dicari: {foodId}</Text>
       </View>
     );
   }
