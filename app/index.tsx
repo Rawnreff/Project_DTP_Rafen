@@ -70,7 +70,9 @@ export default function HomeScreen() {
       </View>
 
       <Text style={styles.subHeaderText}>Kategori</Text>
+      <View style={styles.boxRenderCategory}>
       {renderCategory()}
+      </View>
 
       <ContentWrapper>
         <Text style={styles.subHeaderText}>
@@ -131,6 +133,9 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#006d3c',
     marginBottom: 10,
+  },
+  boxRenderCategory: {
+    minHeight: 50,
   },
   categoryScrollContainer: {
     flexDirection: 'row',
@@ -201,7 +206,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   ratingContainer: {
-    backgroundColor: '#387A61',
+    backgroundColor: '#006d3c',
     borderRadius: 12,
     paddingVertical: 5,
     paddingHorizontal: 10,

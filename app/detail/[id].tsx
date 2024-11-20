@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginBottom: 20,
     marginLeft: 5,
+    marginTop: 10,
   },
   infoCard: {
     backgroundColor: "#FFFFFF",
