@@ -16,20 +16,24 @@ export default function InfoScreen() {
             <Text style={styles.smallTitle}>Tentang</Text>
             <Text style={styles.title}>Kuliner Lokal</Text>
           </View>
-       </View>
-
-        <Text style={styles.description}>
-          Kuliner Lokal adalah aplikasi mobile yang dirancang untuk memperkenalkan dan menjelajahi berbagai 
-          makanan, minuman, dan budaya kuliner lokal yang kaya dan beragam. Kami percaya bahwa kuliner adalah bagian penting 
-          dari identitas budaya, dan aplikasi ini bertujuan untuk membawa rasa lokal lebih dekat kepada Anda.
-        </Text>
-        <View style={styles.featureSection}>
-          <Text style={styles.featureTitle}>Fitur Kami</Text>
-          <Text style={styles.featureItem}>🍕 Jelajahi berbagai kategori hidangan lokal.</Text>
-          <Text style={styles.featureItem}>⭐ Terdapat rating makanan.</Text>
-          <Text style={styles.featureItem}>🔍 Filter kuliner sesuai keinginan anda.</Text>
-          <Text style={styles.featureItem}>📖 Informasi bahan dan deskripsi kuliner.</Text>
         </View>
+
+        {/* Pembungkus baru untuk description dan featureSection */}
+        <View style={styles.contentWrapper}>
+          <Text style={styles.description}>
+            Kuliner Lokal adalah aplikasi mobile yang dirancang untuk memperkenalkan dan menjelajahi berbagai 
+            makanan, minuman, dan budaya kuliner lokal yang kaya dan beragam. Kami percaya bahwa kuliner adalah bagian penting 
+            dari identitas budaya, dan aplikasi ini bertujuan untuk membawa rasa lokal lebih dekat kepada Anda.
+          </Text>
+          <View style={styles.featureSection}>
+            <Text style={styles.featureTitle}>Fitur Kami</Text>
+            <Text style={styles.featureItem}>🍕 Jelajahi berbagai kategori hidangan lokal.</Text>
+            <Text style={styles.featureItem}>⭐ Terdapat rating makanan.</Text>
+            <Text style={styles.featureItem}>🔍 Filter kuliner sesuai keinginan anda.</Text>
+            <Text style={styles.featureItem}>📖 Informasi bahan dan deskripsi kuliner.</Text>
+          </View>
+        </View>
+
         <Text style={styles.footer}>
           Terima kasih telah menggunakan aplikasi Kuliner Lokal. Bersama-sama, mari kita lestarikan dan nikmati kekayaan rasa kuliner Nusantara!
         </Text>
@@ -73,7 +77,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    color: "#004D40",
+    color: "#006d3c",
     textAlign: "justify",
     marginBottom: 20,
     lineHeight: 24,
@@ -84,7 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 25,
     padding: 20,
-    marginBottom: 30,
+    marginBottom: 10,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
@@ -93,13 +97,13 @@ const styles = StyleSheet.create({
   },
   featureTitle: {
     fontSize: 20,
-    color: "#387A61",
+    color: "#006d3c",
     fontWeight: "bold",
     marginBottom: 10,
   },
   featureItem: {
     fontSize: 16,
-    color: "#387A61",
+    color: "#006d3c",
     marginBottom: 5,
     lineHeight: 22,
   },
@@ -110,5 +114,17 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     marginBottom: 80,
     paddingHorizontal: 15,
+  },
+  contentWrapper: {
+    width: "100%",
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    borderRadius: 25,
+    padding: 20,
+    marginBottom: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });

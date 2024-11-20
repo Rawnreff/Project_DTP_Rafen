@@ -91,7 +91,14 @@ export default function HomeScreen() {
 }
 
 const ContentWrapper = ({ children }) => {
-  return <View style={styles.contentWrapper}>{children}</View>;
+  return (
+    <ScrollView
+    showsHorizontalScrollIndicator={false}
+    contentContainerStyle={styles.scrollContentWrapper}>
+      {children}
+      <View style={styles.footerWrapper} />
+    </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#EAF9F0',
     paddingHorizontal: 20,
-    paddingBottom: 80,
+    paddingBottom: 0,
     paddingTop: 15,
   },
   header: {
@@ -148,6 +155,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 15,
     marginHorizontal: 5,
+    marginBottom: 5,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 3,
@@ -172,7 +180,18 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     padding: 0,
     elevation: 2,
-    height: '78%',
+    height: '80%',
+  },
+  scrollContentWrapper: {
+    flexGrow: 1,
+    justifyContent: 'flex-start',
+    paddingBottom: 20,
+  },
+  footerWrapper: {
+    height: 30,
+    backgroundColor: 'rgba(255, 255, 255, 0',
+    width: '100%',
+    marginTop: 0,
   },
   listContainer: {
     paddingBottom: 20,
