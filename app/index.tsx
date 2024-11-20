@@ -130,11 +130,12 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   contentWrapper: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'rgba(255, 255, 255, 0)', 
     borderRadius: 12,
-    padding: 15,
+    padding: 0,
     elevation: 2,
-    height: '74%',
+    height: '78%',
+
   },
   listContainer: {
     paddingBottom: 20,

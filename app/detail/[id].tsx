@@ -44,7 +44,7 @@ export default function FoodDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E2FFF0",
+    backgroundColor: '#EAF9F0',
     padding: 20,
   },
   image: {

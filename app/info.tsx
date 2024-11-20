@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 28,
-    color: "#004D40",
+    color: "#387A61",
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
@@ -52,10 +52,7 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 150,
-    borderRadius: 75,
     marginBottom: 20,
-    borderColor: "#004D40",
-    borderWidth: 3,
   },
   description: {
     fontSize: 16,
@@ -63,6 +60,7 @@ const styles = StyleSheet.create({
     textAlign: "justify",
     marginBottom: 30,
     lineHeight: 24,
+    padding: 15,
   },
   featureSection: {
     width: "100%",
@@ -78,13 +76,13 @@ const styles = StyleSheet.create({
   },
   featureTitle: {
     fontSize: 20,
-    color: "#004D40",
+    color: "#387A61",
     fontWeight: "bold",
     marginBottom: 10,
   },
   featureItem: {
     fontSize: 16,
-    color: "#004D40",
+    color: "#387A61",
     marginBottom: 5,
     lineHeight: 22,
   },
