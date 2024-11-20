@@ -9,10 +9,10 @@ export default function CustomNavbar() {
   return (
     <View style={styles.navbar}>
       <TouchableOpacity onPress={() => router.push('/')}>
-        <Home color="black" size={30} />
+        <Home color="white" size={30} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.push('/info')}>
-        <Info color="black" size={30} />
+        <Info color="white" size={30} />
       </TouchableOpacity>
     </View>
   );
@@ -24,15 +24,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: "100%",
     height: 70,
-    backgroundColor: 'rgba(255, 255, 255, 0.85)',
+    backgroundColor: 'rgba(0, 109, 60, 0.9)',
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     paddingHorizontal: 20,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-  },
-  navbarName: {
-    color: "black",
+    borderTopRightRadius: 0,
+    borderTopLeftRadius: 0,
+
   },
 });
