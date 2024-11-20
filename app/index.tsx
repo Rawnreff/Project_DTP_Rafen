@@ -45,12 +45,14 @@ export default function HomeScreen() {
       style={styles.card}
       onPress={() => router.push(`../detail/${item.id}`)}
     >
-      <Image source={item.image} style={styles.cardImage} />
-      <View style={styles.cardContent}>
+      <View style={styles.cardLeft}>
         <Text style={styles.cardTitle}>{item.name}</Text>
-        <Text style={styles.cardWeight}>Weight {item.weight} gr</Text>
-        <Text style={styles.cardRating}>⭐ {item.rating}</Text>
+        <Text style={styles.cardWeight}>Weight {item.weight}gr</Text>
+        <View style={styles.ratingContainer}>
+          <Text style={styles.cardRating}>★ {item.rating}</Text>
+        </View>
       </View>
+      <Image source={item.image} style={styles.cardImage} />
     </TouchableOpacity>
   );
 
@@ -137,7 +139,7 @@ const styles = StyleSheet.create({
   },
   categoryCard: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
+    borderRadius: 25,
     paddingVertical: 12,
     paddingHorizontal: 15,
     marginHorizontal: 5,
@@ -162,7 +164,7 @@ const styles = StyleSheet.create({
   },
   contentWrapper: {
     backgroundColor: 'rgba(255, 255, 255, 0)', 
-    borderRadius: 12,
+    borderRadius: 0,
     padding: 0,
     elevation: 2,
     height: '78%',
@@ -172,36 +174,42 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
+    borderRadius: 25,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    padding: 20,
     marginBottom: 15,
     elevation: 3,
   },
-  cardImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-    marginRight: 10,
-  },
-  cardContent: {
+  cardLeft: {
     flex: 1,
+  },
+  cardImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 25,
   },
   cardTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#333333',
+    marginBottom: 5,
   },
   cardWeight: {
     fontSize: 14,
     color: '#777777',
-    marginTop: 4,
+    marginBottom: 10,
+  },
+  ratingContainer: {
+    backgroundColor: '#387A61',
+    borderRadius: 12,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    alignSelf: 'flex-start',
   },
   cardRating: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#006d3c',
-    marginTop: 4,
+    color: '#FFFFFF',
   },
 });

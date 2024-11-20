@@ -8,13 +8,7 @@ export default function FoodDetailScreen() {
   const router = useRouter();
 
   const foodId = Number(id);
-
-  console.log("Received ID:", foodId);
-  console.log("All food Data:", foodData);
-
   const food = foodData.find((t) => t.id === foodId);
-
-  console.log("Found food:", food);
 
   if (!food) {
     return (
@@ -28,14 +22,17 @@ export default function FoodDetailScreen() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>{food.name}</Text>
-      <Image source={food.image} style={styles.image} resizeMode="cover" />
-      <View style={styles.container}>
-        <Text style={styles.description}>{food.ingredients}</Text>
-        <Text style={styles.description}>{food.description}</Text>
+      <Image source={food.image} style={styles.image} resizeMode="contain" />
+      <View style={styles.infoCard}>
+        <Text style={styles.infoTitle}>Ingredients</Text>
+        <Text style={styles.infoDescription}>{food.ingredients}</Text>
       </View>
-
+      <View style={styles.infoCard}>
+        <Text style={styles.infoTitle}>Description</Text>
+        <Text style={styles.infoDescription}>{food.description}</Text>
+      </View>
       <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-        <Text style={styles.backButtonText}>Kembali</Text>
+        <Text style={styles.backButtonText}>Kembali ke Halaman Utama</Text>
       </TouchableOpacity>
     </ScrollView>
   );
@@ -44,38 +41,53 @@ export default function FoodDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EAF9F0',
+    backgroundColor: "#EAF9F0",
     padding: 20,
   },
   image: {
     width: "100%",
-    height: 300,
+    height: 260,
+    borderRadius: 50,
+    marginBottom: 20,
   },
   title: {
-    color: "black",
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: "bold",
+    color: "#006d3c",
+    textAlign: "left",
+    marginBottom: 20,
+    marginLeft: 5,
+  },
+  infoCard: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 25,
+    padding: 15,
+    marginBottom: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  infoTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#006d3c",
     marginBottom: 10,
   },
-  origin: {
-    color: "black",
+  infoDescription: {
     fontSize: 16,
-    marginBottom: 15,
-  },
-  description: {
-    color: "black",
-    fontSize: 14,
-    lineHeight: 22,
+    color: "#333333",
   },
   backButton: {
-    backgroundColor: "#376E46",
+    backgroundColor: "#006d3c",
     padding: 15,
-    marginTop: 20,
-    borderRadius: 10,
+    borderRadius: 25,
     alignItems: "center",
+    marginTop: 20,
   },
   backButtonText: {
-    color: "white",
+    color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "bold",
   },
