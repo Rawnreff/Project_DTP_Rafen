@@ -21,10 +21,10 @@ export default function CustomNavbar() {
 const styles = StyleSheet.create({
   navbar: {
     position: "absolute",
-    bottom: 0,
-    width: "100%",
+    bottom: -4,
+    width: "101%",
     height: 70,
-    backgroundColor: 'rgba(0, 109, 60, 0.9)',
+    backgroundColor: 'rgba(0, 109, 60, 0.85)',
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
