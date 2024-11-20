@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   navbar: {
     position: "absolute",
     bottom: -4,
-    width: "101%",
+    width: "100%",
     height: 70,
     backgroundColor: 'rgba(0, 109, 60, 0.85)',
     flexDirection: "row",
