@@ -93,7 +93,7 @@ export default function HomeScreen() {
 const ContentWrapper = ({ children }) => {
   return (
     <ScrollView
-    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
     contentContainerStyle={styles.scrollContentWrapper}>
       {children}
       <View style={styles.footerWrapper} />

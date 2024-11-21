@@ -6,7 +6,9 @@ const { height } = Dimensions.get("window");
 export default function InfoScreen() {
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent}>
+      <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.scrollContent}>
         <View style={styles.header}>
           <Image 
             source={require('../assets/images/logo-kl.png')} 
@@ -18,7 +20,6 @@ export default function InfoScreen() {
           </View>
         </View>
 
-        {/* Pembungkus baru untuk description dan featureSection */}
         <View style={styles.contentWrapper}>
           <Text style={styles.description}>
             Kuliner Lokal adalah aplikasi mobile yang dirancang untuk memperkenalkan dan menjelajahi berbagai 
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
   },
   contentWrapper: {
     width: "100%",
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     borderRadius: 25,
     padding: 20,
     marginBottom: 30,
